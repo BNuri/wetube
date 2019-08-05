@@ -1,7 +1,14 @@
 node_modules
 package-lock.json
-videos
+uploads
+
+# Serverless directories
+.Serverless
 
 # dotenv environment variables file
 .env
 static
+
+# FuseBox cache
+.fusebox/
+uploads

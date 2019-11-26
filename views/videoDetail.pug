@@ -30,7 +30,7 @@ block content
                     |  comments 
             form.add__comment#jsAddComment
                 input(type="text", placeholder="Add a comment", name="comment")
-            ul.video__comment-list#jsCommentList
+            ul.video__comments-list#jsCommentList
                 each comment in video.comments.reverse()
                     li
                         span=comment.text

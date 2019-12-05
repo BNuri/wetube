@@ -17,9 +17,9 @@ const decreaseNumber = () => {
 
 const addComment = comment => {
   const li = document.createElement("li");
-  const span = document.createElement("span");
-  span.innerHTML = comment;
-  li.appendChild(span);
+  const commentSpan = document.createElement("span");
+  commentSpan.innerHTML = comment;
+  li.appendChild(commentSpan);
   commentList.prepend(li);
   increaseNumber();
 };
@@ -34,7 +34,7 @@ const sendComment = async comment => {
     }
   });
   if (response.status === 200) {
-    addComment(comment);
+    addComment(comment, response);
   }
 };
 

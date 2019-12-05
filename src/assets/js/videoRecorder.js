@@ -18,7 +18,6 @@ const startRecording = () => {
   videoRecorder = new MediaRecorder(streamObject);
   videoRecorder.start();
   videoRecorder.addEventListener("dataavailable", handleVideoData);
-  recordBtn.removeEventListener("click", getVideo);
   recordBtn.addEventListener("click", stopRecording);
 };
 
@@ -35,7 +34,8 @@ const getVideo = async () => {
       audio: true,
       video: { width: 1280, height: 720 }
     });
-    videoPreview.scrObject = stream;
+    console.log(videoPreview);
+    videoPreview.srcObject = stream;
     videoPreview.muted = true;
     videoPreview.play();
     recordBtn.innerHTML = "Stop recording";
@@ -44,7 +44,7 @@ const getVideo = async () => {
   } catch (error) {
     recordBtn.innerHTML = ":( Cant record";
   } finally {
-    recordBtn.removeEventListener("click", startRecording);
+    recordBtn.removeEventListener("click", getVideo);
   }
 };
 

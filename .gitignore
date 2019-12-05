@@ -12,3 +12,4 @@ static
 # FuseBox cache
 .fusebox/
 uploads
+build

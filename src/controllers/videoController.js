@@ -17,7 +17,9 @@ export const search = async (req, res) => {
   } = req;
   let videos = [];
   try {
-    videos = await Video.find({ title: { $regex: searchingBy, $option: "i" } });
+    videos = await Video.find({
+      title: { $regex: searchingBy, $options: "i" }
+    });
   } catch (error) {
     console.log(error);
   }
@@ -65,12 +67,13 @@ export const getEditVideo = async (req, res) => {
   } = req;
   try {
     const video = await Video.findById(id);
-    if (video.creator !== req.user.id) {
+    if (video.creator.toString() !== req.user.id) {
       throw Error();
     } else {
       res.render("editVideo", { pageTitle: `Edit ${video.title}`, video });
     }
   } catch (error) {
+    console.log(error);
     res.redirect(routes.home);
   }
 };

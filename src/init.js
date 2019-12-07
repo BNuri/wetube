@@ -1,3 +1,4 @@
+import "@babel/polyfill";
 import "./models/Video";
 import "./models/Comment";
 import "./models/User";

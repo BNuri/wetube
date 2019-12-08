@@ -34,7 +34,6 @@ const getVideo = async () => {
       audio: true,
       video: { width: 1280, height: 720 }
     });
-    console.log(videoPreview);
     videoPreview.srcObject = stream;
     videoPreview.muted = true;
     videoPreview.play();

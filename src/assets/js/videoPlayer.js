@@ -93,9 +93,8 @@ async function setTotalTime() {
   const blob = await fetch(videoPlayer.src).then(response => response.blob());
   const duration = await getBlobDuration(blob);
   console.log(duration);
-  console.log(typeof duration);
-  console.log(duration.toString());
   const totalTimeString = formatDate(duration);
+  console.log(totalTimeString);
   totalTime.innerHTML = totalTimeString;
   setInterval(getCurrentTime, 1000);
 }

@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import express from "express";
 import helmet from "helmet";
 import passport from "passport";
+import flash from "express-flash";
 import mongoose from "mongoose";
 import session from "express-session";
 import path from "path";
@@ -37,6 +38,7 @@ app.use(
     store: new CookieStore({ mongooseConnection: mongoose.connection })
   })
 );
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 

@@ -6,11 +6,11 @@ const commentNumber = document.getElementById("jsCommentNumber");
 const deleteCommentBtn = document.querySelectorAll("#jsDeleteComment");
 
 const increaseNumber = () => {
-  commentNumber.innerHTML = parseInt(commentNumber.innerHTML, 10) + 1;
+  commentNumber.innerText = parseInt(commentNumber.innerHTML, 10) + 1;
 };
 
 const decreaseNumber = () => {
-  commentNumber.innerHTML = parseInt(commentNumber.innerHTML, 10) - 1;
+  commentNumber.innerText = parseInt(commentNumber.innerHTML, 10) - 1;
 };
 
 // ADD COMMENT

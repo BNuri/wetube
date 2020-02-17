@@ -39,18 +39,19 @@
       font-size: 18px;
     }
     .add__comment {
-      margin-top: 25px;
+      margin: 25px 0;
       width: 100%;
       input {
         width: 100%;
       }
     }
     .video__comments-list {
-      margin-top: 50px;
+      margin-top: 30px;
       li {
+        display: inline-block;
         background-color: #3498db;
         color: white;
-        padding: 10px;
+        padding: 10px 20px;
         border-radius: 20px;
         border-bottom-left-radius: 0px;
         &:not(:last-child) {
